@@ -1,3 +1,4 @@
+'use client';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { colleges } from '@/lib/data';
@@ -27,7 +28,10 @@ import {
   ClipboardList,
   Sparkles,
   MessageSquare,
+  Bot,
 } from 'lucide-react';
+import { summarizeStudentReviews } from '@/ai/flows/ai-summarize-student-reviews';
+import { useEffect, useState } from 'react';
 
 const StarRating = ({ rating, count }: { rating: number; count: number }) => {
   return (
@@ -50,6 +54,54 @@ const StarRating = ({ rating, count }: { rating: number; count: number }) => {
   );
 };
 
+const ReviewSummary = ({ collegeName, reviews }: { collegeName: string; reviews: string[] }) => {
+  const [summary, setSummary] = useState('');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function getSummary() {
+      try {
+        setLoading(true);
+        const result = await summarizeStudentReviews({ collegeName, reviews });
+        setSummary(result.summary);
+      } catch (error) {
+        console.error('Error summarizing reviews:', error);
+        setSummary('Could not generate a summary at this time.');
+      } finally {
+        setLoading(false);
+      }
+    }
+    if (reviews.length > 0) {
+      getSummary();
+    } else {
+        setLoading(false);
+        setSummary('There are no reviews to summarize yet.');
+    }
+  }, [collegeName, reviews]);
+
+  return (
+    <Card className="bg-primary/5 border-primary/20">
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2 text-lg">
+          <Bot className="text-primary" />
+          AI Review Summary
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        {loading ? (
+          <div className="space-y-2">
+            <p className="h-4 w-full animate-pulse rounded-md bg-muted"></p>
+            <p className="h-4 w-3/4 animate-pulse rounded-md bg-muted"></p>
+            <p className="h-4 w-5/6 animate-pulse rounded-md bg-muted"></p>
+          </div>
+        ) : (
+          <p className="text-sm text-foreground/90">{summary}</p>
+        )}
+      </CardContent>
+    </Card>
+  );
+};
+
 export default function CollegeDetailPage({
   params,
 }: {
@@ -66,6 +118,8 @@ export default function CollegeDetailPage({
   const galleryImages = college.images.map((id) =>
     PlaceHolderImages.find((p) => p.id === id)
   );
+  
+  const reviewComments = college.reviews.map(r => r.comment);
 
   return (
     <div className="bg-background">
@@ -137,6 +191,7 @@ export default function CollegeDetailPage({
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
+                  <ReviewSummary collegeName={college.name} reviews={reviewComments} />
                   {college.reviews.map((review) => (
                     <div key={review.id} className="flex flex-col gap-2">
                         <div className="flex items-center justify-between">
