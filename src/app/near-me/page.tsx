@@ -1,10 +1,11 @@
 'use client';
 import { useState, useMemo } from 'react';
+import { useRouter } from 'next/navigation';
 import { useLocation } from '@/hooks/use-location';
 import { CollegeCard } from '@/components/college-card';
 import { colleges } from '@/lib/data';
 import { Button } from '@/components/ui/button';
-import { MapPin } from 'lucide-react';
+import { LayoutPanelLeft, MapPin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Select,
@@ -17,6 +18,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 export default function NearMePage() {
   const { location, loading, error, requestLocation } = useLocation();
+  const router = useRouter();
   const [radius, setRadius] = useState(50); // Default radius in km
   const [compareList, setCompareList] = useState<number[]>([]);
 
@@ -38,6 +40,12 @@ export default function NearMePage() {
       }
     } else {
       setCompareList(prev => prev.filter(item => item !== id));
+    }
+  };
+  
+  const handleGoToCompare = () => {
+    if (compareList.length > 1) {
+      router.push(`/compare?ids=${compareList.join(',')}`);
     }
   };
 
@@ -71,6 +79,24 @@ export default function NearMePage() {
             </Select>
         </div>
       </Card>
+      
+      {compareList.length > 0 && (
+        <Card className="sticky top-20 z-40 mb-6 bg-primary/90 text-primary-foreground backdrop-blur-sm">
+          <CardContent className="flex items-center justify-between p-4">
+            <p className="font-semibold">
+              {compareList.length} college(s) selected for comparison.
+            </p>
+            <Button
+              onClick={handleGoToCompare}
+              disabled={compareList.length < 2}
+              className="bg-accent text-accent-foreground hover:bg-accent/90 disabled:bg-accent/50 disabled:cursor-not-allowed"
+            >
+              <LayoutPanelLeft className="mr-2 h-4 w-4" />
+              Compare ({compareList.length})
+            </Button>
+          </CardContent>
+        </Card>
+      )}
 
       {loading && (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
