@@ -1,5 +1,5 @@
 'use client';
-import { notFound } from 'next/navigation';
+import { notFound, useParams } from 'next/navigation';
 import Image from 'next/image';
 import { colleges } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -102,12 +102,9 @@ const ReviewSummary = ({ collegeName, reviews }: { collegeName: string; reviews:
   );
 };
 
-export default function CollegeDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const { id } = params;
+export default function CollegeDetailPage() {
+  const params = useParams();
+  const id = params.id as string;
   const college = colleges.find((c) => c.id === parseInt(id));
 
   if (!college) {
