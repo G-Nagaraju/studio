@@ -5,7 +5,7 @@ import { CollegeCard } from '@/components/college-card';
 import { colleges } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { MapPin } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Select,
   SelectContent,
