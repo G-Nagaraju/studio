@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -5,8 +6,13 @@ import {
   buttonVariants,
 } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Search, BrainCircuit } from 'lucide-react';
+import { CheckCircle, Search, BrainCircuit, MapPin } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { useLocation } from '@/hooks/use-location';
+import { colleges } from '@/lib/data';
+import { CollegeCard } from '@/components/college-card';
+import { useMemo, useState } from 'react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const features = [
   {
@@ -25,6 +31,102 @@ const features = [
     description: 'Compare colleges to find the perfect fit for you.',
   },
 ];
+
+const CollegesNearYou = () => {
+  const { location, loading, error, requestLocation } = useLocation();
+  const [compareList, setCompareList] = useState<number[]>([]);
+
+
+  const nearbyColleges = useMemo(() => {
+    if (!location) return [];
+    return colleges
+      .map(college => ({
+        ...college,
+        distance: location.distanceTo(college.location.lat, college.location.lng),
+      }))
+      .sort((a, b) => a.distance - b.distance)
+      .slice(0, 3);
+  }, [location]);
+
+  const handleCompareToggle = (id: number, selected: boolean) => {
+    if (selected) {
+      if (compareList.length < 4) {
+        setCompareList(prev => [...prev, id]);
+      }
+    } else {
+      setCompareList(prev => prev.filter(item => item !== id));
+    }
+  };
+
+  return (
+      <section className="bg-background py-20 md:py-24">
+        <div className="container mx-auto">
+          <div className="mx-auto max-w-3xl text-center">
+             <h2 className="font-headline text-3xl font-bold md:text-4xl">
+              Colleges Near You
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Discover top-rated colleges in your vicinity.
+            </p>
+          </div>
+
+          <div className="mt-12">
+            {loading && (
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                 {[...Array(3)].map((_, i) => (
+                    <Card key={i}>
+                        <Skeleton className="h-48 w-full" />
+                        <CardContent className="p-4">
+                        <Skeleton className="h-6 w-3/4" />
+                        <Skeleton className="mt-2 h-4 w-1/2" />
+                        <Skeleton className="mt-4 h-5 w-1/3" />
+                        </CardContent>
+                    </Card>
+                ))}
+              </div>
+            )}
+            {error && (
+              <Card className="text-center p-8">
+                <p className="mb-4 text-muted-foreground">{error}</p>
+                <Button onClick={requestLocation}>Allow Location Access</Button>
+              </Card>
+            )}
+            {!loading && !error && location && (
+               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {nearbyColleges.map(college => (
+                        <CollegeCard
+                            key={college.id}
+                            college={college}
+                            onCompareToggle={handleCompareToggle}
+                            isComparing={compareList.includes(college.id)}
+                            distance={college.distance}
+                        />
+                    ))}
+              </div>
+            )}
+             {!loading && !error && !location && (
+                <Card className="flex flex-col items-center justify-center p-12 text-center">
+                    <MapPin className="h-12 w-12 text-muted-foreground" />
+                    <p className="mt-4 text-muted-foreground">Please enable location access to see colleges near you.</p>
+                    <Button onClick={requestLocation} className="mt-4">
+                        Find Colleges Near Me
+                    </Button>
+                </Card>
+            )}
+          </div>
+          {!loading && location && (
+            <div className="mt-8 text-center">
+                <Link href="/near-me" className={buttonVariants({size: 'lg'})}>
+                    View More Nearby Colleges
+                </Link>
+            </div>
+          )}
+        </div>
+      </section>
+  )
+
+}
+
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero');
@@ -77,7 +179,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-background py-20 md:py-24">
+      <CollegesNearYou />
+
+      <section className="bg-primary/5 py-20 md:py-24">
         <div className="container mx-auto">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-headline text-3xl font-bold md:text-4xl">
@@ -106,7 +210,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-primary/5 py-20 md:py-24">
+      <section className="bg-background py-20 md:py-24">
         <div className="container mx-auto text-center">
            <h2 className="font-headline text-3xl font-bold md:text-4xl">
               Ready to Start Your Journey?

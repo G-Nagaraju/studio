@@ -21,6 +21,7 @@ export default function Footer() {
               <li><Link href="/colleges" className="text-muted-foreground hover:text-primary">Colleges</Link></li>
               <li><Link href="/compare" className="text-muted-foreground hover:text-primary">Compare</Link></li>
               <li><Link href="/recommendations" className="text-muted-foreground hover:text-primary">AI Advisor</Link></li>
+              <li><Link href="/near-me" className="text-muted-foreground hover:text-primary">Near Me</Link></li>
             </ul>
           </div>
           <div className="space-y-2">

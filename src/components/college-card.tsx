@@ -5,12 +5,13 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { MapPin, Star, Building, Check } from 'lucide-react';
+import { MapPin, Star, Building, Check, Pin } from 'lucide-react';
 
 interface CollegeCardProps {
   college: College;
   onCompareToggle: (id: number, selected: boolean) => void;
   isComparing: boolean;
+  distance?: number;
 }
 
 const StarRating = ({ rating }: { rating: number }) => {
@@ -33,7 +34,7 @@ const StarRating = ({ rating }: { rating: number }) => {
   );
 };
 
-export function CollegeCard({ college, onCompareToggle, isComparing }: CollegeCardProps) {
+export function CollegeCard({ college, onCompareToggle, isComparing, distance }: CollegeCardProps) {
   const logo = PlaceHolderImages.find((p) => p.id === college.logoUrl);
   const mainImage = PlaceHolderImages.find((p) => p.id === college.images[0]);
 
@@ -55,6 +56,12 @@ export function CollegeCard({ college, onCompareToggle, isComparing }: CollegeCa
               <div className="flex h-full w-full items-center justify-center bg-muted">
                 <Building className="h-12 w-12 text-muted-foreground" />
               </div>
+            )}
+            {distance !== undefined && (
+                 <Badge variant="default" className="absolute top-2 right-2 flex items-center gap-1">
+                    <Pin className="h-3 w-3" />
+                    {distance.toFixed(1)} km away
+                </Badge>
             )}
             <div className="absolute bottom-2 left-2">
                 {logo && 

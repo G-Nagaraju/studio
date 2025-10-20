@@ -10,6 +10,7 @@ import {
   Users,
   BrainCircuit,
   LayoutPanelLeft,
+  MapPin,
 } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
@@ -42,6 +43,11 @@ const navLinks = [
     label: 'AI Advisor',
     icon: BrainCircuit,
   },
+  {
+    href: '/near-me',
+    label: 'Near Me',
+    icon: MapPin
+  }
 ];
 
 export default function Header() {
