@@ -103,11 +103,11 @@ const ReviewSummary = ({ collegeName, reviews }: { collegeName: string; reviews:
 };
 
 export default function CollegeDetailPage({
-  params,
+  params: { id },
 }: {
   params: { id: string };
 }) {
-  const college = colleges.find((c) => c.id === parseInt(params.id));
+  const college = colleges.find((c) => c.id === parseInt(id));
 
   if (!college) {
     notFound();
