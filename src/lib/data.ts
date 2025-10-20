@@ -213,7 +213,7 @@ export const colleges: College[] = [
     courses: [
         { id: 'cse', name: 'Computer Science and Engineering', department: 'Engineering' },
         { id: 'it', name: 'Information Technology', department: 'Engineering' },
-        { id: 'mech', name: 'Mechanical Engineering', department: 'Engineering' },
+        { id: 'mech', 'name': 'Mechanical Engineering', department: 'Engineering' },
     ],
     facilities: ['Library', 'Computer Center', 'Sports', 'Hostel', 'Gym'],
     hostelInfo: 'Good hostel facilities with a disciplined environment.',
@@ -365,6 +365,100 @@ export const colleges: College[] = [
     logoUrl: 'college-logo-3',
     location: { lat: 13.629, lng: 79.351 },
     mapImage: 'map-placeholder-3',
+  },
+  {
+    id: 16,
+    name: 'IIIT Sri City',
+    city: 'Sri City',
+    district: 'Tirupati',
+    description: 'Indian Institute of Information Technology, Sri City is a research-intensive institute of national importance, focused on Information Technology education and research.',
+    courses: [
+      { id: 'cse', name: 'Computer Science and Engineering', department: 'Engineering' },
+      { id: 'ece', name: 'Electronics and Communication Engineering', department: 'Engineering' },
+      { id: 'ai-ds', name: 'Artificial Intelligence and Data Science', department: 'Engineering' }
+    ],
+    facilities: ['Modern Campus', 'Advanced Labs', 'Start-up centers', 'Robotics lab', 'Library'],
+    hostelInfo: 'Fully residential campus with separate hostels for boys and girls.',
+    admissionCutoff: 'Based on JEE Main scores, with admission through JoSAA/CSAB counseling.',
+    rating: 4.5,
+    reviews: [
+      { id: 1, author: 'Nithya Menon', rating: 5, comment: 'Excellent curriculum with a focus on current industry trends. Great exposure to research.', date: '2023-09-15' }
+    ],
+    images: ['college-campus-modern-1', 'college-library-1'],
+    logoUrl: 'college-logo-tech',
+    location: { lat: 13.568, lng: 80.007 },
+    mapImage: 'map-placeholder-4'
+  },
+  {
+    id: 17,
+    name: 'JNTU College of Engineering, Anantapur',
+    city: 'Anantapur',
+    district: 'Anantapur',
+    description: 'One of the oldest and most prestigious government engineering colleges in Andhra Pradesh, established in 1946.',
+    courses: [
+      { id: 'cse', name: 'Computer Science and Engineering', department: 'Engineering' },
+      { id: 'eee', name: 'Electrical and Electronics Engineering', department: 'Engineering' },
+      { id: 'mech', name: 'Mechanical Engineering', department: 'Engineering' },
+      { id: 'civil', name: 'Civil Engineering', department: 'Engineering' }
+    ],
+    facilities: ['Sprawling Campus', 'Library', 'Workshops', 'Hostels', 'Sports Ground'],
+    hostelInfo: 'On-campus hostel facilities are available for both men and women.',
+    admissionCutoff: 'Based on AP EAMCET rank. Highly competitive for core branches.',
+    rating: 4.4,
+    reviews: [
+      { id: 1, author: 'Pavan Kalyan', rating: 4, comment: 'Great legacy and experienced faculty. The campus has a lot of history.', date: '2023-06-20' }
+    ],
+    images: ['college-campus-historic-1', 'college-campus-2'],
+    logoUrl: 'college-logo-1',
+    location: { lat: 14.654, lng: 77.596 },
+    mapImage: 'map-placeholder-1'
+  },
+  {
+    id: 18,
+    name: 'Kurnool Medical College',
+    city: 'Kurnool',
+    district: 'Kurnool',
+    description: 'One of the oldest and most renowned medical colleges in Andhra Pradesh, established in 1956.',
+    courses: [
+      { id: 'mbbs', name: 'MBBS', department: 'Medicine' },
+      { id: 'md', name: 'MD (Doctor of Medicine)', department: 'Medicine' },
+      { id: 'ms', name: 'MS (Master of Surgery)', department: 'Medicine' }
+    ],
+    facilities: ['Attached General Hospital', 'Advanced Medical Labs', 'Library', 'Auditorium', 'Hostels'],
+    hostelInfo: 'Separate hostel blocks for undergraduate and postgraduate students.',
+    admissionCutoff: 'Based on NEET UG and NEET PG ranks.',
+    rating: 4.7,
+    reviews: [
+      { id: 1, author: 'Dr. Anjali', rating: 5, comment: 'Excellent clinical exposure due to the high patient flow in the attached hospital.', date: '2023-02-18' }
+    ],
+images: ['college-hospital-1', 'college-lab-1'],
+    logoUrl: 'college-logo-medical',
+    location: { lat: 15.826, lng: 78.037 },
+    mapImage: 'map-placeholder-2'
+  },
+  {
+    id: 19,
+    name: 'Acharya Nagarjuna University',
+    city: 'Guntur',
+    district: 'Guntur',
+    description: 'A large public university offering a wide range of undergraduate, postgraduate, and doctoral programs across various disciplines.',
+    courses: [
+      { id: 'mba', name: 'Master of Business Administration', department: 'Management' },
+      { id: 'mcom', name: 'Master of Commerce', department: 'Commerce' },
+      { id: 'ma-eng', name: 'MA English', department: 'Humanities' },
+      { id: 'msc-phy', name: 'M.Sc Physics', department: 'Science' }
+    ],
+    facilities: ['Central Library', 'Sports Village', 'Health Center', 'Bank', 'Post Office'],
+    hostelInfo: 'Extensive hostel facilities for students from various parts of the country.',
+    admissionCutoff: 'Based on ANUPGCET for postgraduate courses.',
+    rating: 4.0,
+    reviews: [
+      { id: 1, author: 'Srinivas Rao', rating: 4, comment: 'Vast campus and a good place for higher education. The university has a good reputation.', date: '2023-04-05' }
+    ],
+    images: ['college-campus-1', 'college-campus-4'],
+    logoUrl: 'college-logo-2',
+    location: { lat: 16.376, lng: 80.521 },
+    mapImage: 'map-placeholder-3'
   }
 ];
 

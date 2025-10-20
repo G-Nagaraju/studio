@@ -71,6 +71,54 @@
       "description": "A placeholder map showing a pin on a city.",
       "imageUrl": "https://images.unsplash.com/photo-1731082154898-2e63df0f2a42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYXAlMjBsb2NhdGlvbnxlbnwwfHx8fDE3NjA5MzY2ODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "map location"
+    },
+    {
+      "id": "college-logo-tech",
+      "description": "Technology institute logo",
+      "imageUrl": "https://images.unsplash.com/photo-1661347998423-b15d37d6f61e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NjA5MzQ2NTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "college-logo-medical",
+      "description": "Medical college logo",
+      "imageUrl": "https://images.unsplash.com/photo-1751894051402-7cdb1753a653?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtZWRpY2FsJTIwbG9nb3xlbnwwfHx8fDE3NjA4OTMxOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical logo"
+    },
+    {
+      "id": "college-campus-modern-1",
+      "description": "A modern college campus building",
+      "imageUrl": "https://images.unsplash.com/photo-1614460646652-2094b060b5be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBjYW1wdXN8ZW58MHx8fHwxNzYwODg2NTEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern campus"
+    },
+    {
+      "id": "college-library-1",
+      "description": "A college library",
+      "imageUrl": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb2xsZWdlJTIwbGlicmFyeXxlbnwwfHx8fDE3NjA5Mzg5MjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "college library"
+    },
+    {
+      "id": "college-campus-historic-1",
+      "description": "A historic college campus building",
+      "imageUrl": "https://images.unsplash.com/photo-1726390415278-3c9bf426c0d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxoaXN0b3JpYyUyMGNhbXB1c3xlbnwwfHx8fDE3NjA5NDIwOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "historic campus"
+    },
+    {
+      "id": "college-hospital-1",
+      "description": "A teaching hospital building",
+      "imageUrl": "https://images.unsplash.com/photo-1664166667653-6f0896ad2cd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dGVhY2hpbmclMjBob3NwaXRhbHxlbnwwfHx8fDE3NjA5NDIwOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "teaching hospital"
+    },
+    {
+      "id": "college-lab-1",
+      "description": "A science lab in a college",
+      "imageUrl": "https://images.unsplash.com/photo-1602052577122-f73b9710adba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzY2llbmNlJTIwbGFifGVufDB8fHx8MTc2MDg0OTAwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "science lab"
+    },
+    {
+      "id": "map-placeholder-4",
+      "description": "A placeholder map showing a pin on a city.",
+      "imageUrl": "https://images.unsplash.com/photo-1619468129361-605ebea04b44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYXAlMjBsb2NhdGlvbnxlbnwwfHx8fDE3NjA5MzY2ODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "map location"
     }
   ]
 }
