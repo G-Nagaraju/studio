@@ -1,3 +1,76 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "Students collaborating in a modern library",
+      "imageUrl": "https://images.unsplash.com/photo-1620829813573-7c9e1877706f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzdHVkZW50cyUyMHN0dWR5aW5nfGVufDB8fHx8MTc2MDg3NDI4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "students studying"
+    },
+    {
+      "id": "college-logo-1",
+      "description": "University logo with a book and torch icon",
+      "imageUrl": "https://images.unsplash.com/photo-1637433496898-763a0a9ed579?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx1bml2ZXJzaXR5JTIwbG9nb3xlbnwwfHx8fDE3NjA4ODMwNzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university logo"
+    },
+    {
+      "id": "college-logo-2",
+      "description": "Modern university logo with abstract shapes",
+      "imageUrl": "https://images.unsplash.com/photo-1634578197578-dd387521fea3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBsb2dvfGVufDB8fHx8MTc2MDg5NDQ0NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern logo"
+    },
+    {
+      "id": "college-logo-3",
+      "description": "Institute of technology logo with gear icon",
+      "imageUrl": "https://images.unsplash.com/photo-1760037028517-e5cc6e3ebd3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0ZWNoJTIwbG9nb3xlbnwwfHx8fDE3NjA5MzQ2NTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tech logo"
+    },
+    {
+      "id": "college-campus-1",
+      "description": "Lush green university campus with a large building",
+      "imageUrl": "https://images.unsplash.com/photo-1583373834259-46cc92173cb7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc2MDg1NDUyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university campus"
+    },
+    {
+      "id": "college-campus-2",
+      "description": "Modern glass building of a college campus",
+      "imageUrl": "https://images.unsplash.com/photo-1574848296471-28f79a036f79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBidWlsZGluZ3xlbnwwfHx8fDE3NjA4NDE0NDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern building"
+    },
+    {
+      "id": "college-campus-3",
+      "description": "University library interior with many books",
+      "imageUrl": "https://images.unsplash.com/photo-1667146123001-ffe77412878b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bGlicmFyeSUyMGludGVyaW9yfGVufDB8fHx8MTc2MDg3MjQ5NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "library interior"
+    },
+    {
+      "id": "college-campus-4",
+      "description": "Students walking on a university campus path",
+      "imageUrl": "https://images.unsplash.com/photo-1633192603266-331a864bbce6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdHVkZW50cyUyMHdhbGtpbmd8ZW58MHx8fHwxNzYwOTM3NDQ5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "students walking"
+    },
+    {
+      "id": "college-campus-5",
+      "description": "College classroom with desks and chairs",
+      "imageUrl": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbGFzc3Jvb218ZW58MHx8fHwxNzYwOTM2Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "classroom"
+    },
+    {
+      "id": "map-placeholder-1",
+      "description": "A placeholder map showing a pin on a city.",
+      "imageUrl": "https://images.unsplash.com/photo-1548345680-f5475ea5df84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYXAlMjBsb2NhdGlvbnxlbnwwfHx8fDE3NjA5MzY2ODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "map location"
+    },
+    {
+      "id": "map-placeholder-2",
+      "description": "A placeholder map showing a pin on a city.",
+      "imageUrl": "https://images.unsplash.com/photo-1736117703382-8ed6a338c3b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYXAlMjBsb2NhdGlvbnxlbnwwfHx8fDE3NjA5MzY2ODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "map location"
+    },
+    {
+      "id": "map-placeholder-3",
+      "description": "A placeholder map showing a pin on a city.",
+      "imageUrl": "https://images.unsplash.com/photo-1731082154898-2e63df0f2a42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYXAlMjBsb2NhdGlvbnxlbnwwfHx8fDE3NjA5MzY2ODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "map location"
+    }
+  ]
 }
